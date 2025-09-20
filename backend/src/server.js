@@ -11,8 +11,8 @@ const PORT = process.env.PORT || 5001;
 app.use(express.json());
 
 const limiter = rateLimit({
-  windowMs: 20 * 1000, // time frame for rate limiting in milliseconds
-  max: 10, // maximum number of requests allowed per IP
+  windowMs: 20 * 1000,
+  max: 10,
   message: "Too many requests, please try again after few seconds.",
 });
 
@@ -21,10 +21,8 @@ app.use(limiter);
 // middleware
 app.use("/api/notes", notesRoutes);
 
-connectDB().then( () =>{
-
+connectDB().then(() => {
   app.listen(PORT, () => {
     console.log(`Server running on http://localhost:${PORT}`);
-  })
-}
-);
+  });
+});

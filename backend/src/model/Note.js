@@ -1,8 +1,5 @@
 import mongoose from "mongoose";
 
-// create a schema
-// create a model based of that schema
-
 const noteSchema = new mongoose.Schema(
   {
     title: {
@@ -15,7 +12,7 @@ const noteSchema = new mongoose.Schema(
     },
   },
   {
-    timestamps: true, // createdAt, updatedAt
+    timestamps: true,
   }
 );
 
