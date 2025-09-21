@@ -1,14 +1,21 @@
 import express from "express";
+import dotenv from "dotenv";
+import cors from "cors";
+import rateLimit from "express-rate-limit";
+
 import notesRoutes from "./routes/notesRoutes.js";
 import { connectDB } from "./config/db.js";
-import dotenv from "dotenv";
-import rateLimit from "express-rate-limit";
+
 dotenv.config();
 
 const app = express();
 const PORT = process.env.PORT || 5001;
 
-app.use(express.json());
+app.use(
+  cors({
+    origin: ["http://localhost:5173", "http://localhost:3000"],
+  })
+);
 
 const limiter = rateLimit({
   windowMs: 20 * 1000,
@@ -16,9 +23,9 @@ const limiter = rateLimit({
   message: "Too many requests, please try again after few seconds.",
 });
 
-app.use(limiter);
-
 // middleware
+app.use(express.json());
+app.use(limiter);
 app.use("/api/notes", notesRoutes);
 
 connectDB().then(() => {
