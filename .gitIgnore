@@ -8,6 +8,10 @@ node_modules/
 logs/
 *.log
 npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
 
 # OS generated files
 .DS_Store
@@ -15,8 +19,16 @@ Thumbs.db
 
 # Build output
 dist/
+dist-ssr/
 build/
 
 # IDE files
-.vscode/
+.vscode/*
+!.vscode/extensions.json
 .idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+*.local

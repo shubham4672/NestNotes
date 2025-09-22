@@ -1,0 +1,22 @@
+{
+  "name": "note_nest",
+  "version": "1.0.0",
+  "description": "NoteNest is a full-stack personal notes application built with React (frontend), Node.js/Express (backend), and MongoDB. It allows users to create, view, update, and delete notes with a modern UI and robust API.",
+  "main": "index.js",
+  "scripts": {
+    "build": "npm install --prefix frontend && npm install --prefix backend && npm run build --prefix frontend",
+    "start": "npm run start --prefix backend"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shubham4672/NestNotes.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/shubham4672/NestNotes/issues"
+  },
+  "homepage": "https://github.com/shubham4672/NestNotes#readme"
+}
